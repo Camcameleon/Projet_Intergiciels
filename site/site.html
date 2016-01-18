@@ -8,7 +8,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#menu a").click(function( e ){
+			e.preventDefault();
+			var href = $( this ).attr('href');
+			$("#content").load( href +" #content");
+		});
+	});
+	</script>
+	
     <title>Site</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -89,7 +100,7 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-        <div id="navbar" class="nav navbar-nav navbar-center">
+        <div id="menu" class="nav navbar-nav navbar-center">
           <ul class="nav navbar-nav navbar-center">
             <li><a href="partie.html">Partie</a></li>
 	    <li><a href="../navbar/">Historique</a></li>
@@ -104,7 +115,7 @@
     
   
 
- <div class="container-fluid">
+ <div id ="content" class="container-fluid">
       <div class="row">
           
 
