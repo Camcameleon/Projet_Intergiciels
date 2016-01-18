@@ -111,10 +111,10 @@
         </div>
         <div id="menu" class="nav navbar-nav navbar-center">
           <ul class="nav navbar-nav navbar-center">
-            <li id="nav0" class="" onclick="buttonShadow(this.id);"><a href="partie.html">Partie</a></li>
-	    	<li id="nav1" class="" onclick="buttonShadow(this.id);"><a href="../navbar/">Historique</a></li>
-            <li id="nav2" class="active" onclick="buttonShadow(this.id);"><a href="site.html">Marche<span class="sr-only">(current)</span></a></li>
-            <li id="nav3" class="" onclick="buttonShadow(this.id);"><a href="classement.html">Classement</a></li>
+            <li id="nav0" class="" onclick="shadowButton(this.id);"><a href="partie.html">Partie</a></li>
+	    	<li id="nav1" class="" onclick="shadowButton(this.id);"><a href="../navbar/">Historique</a></li>
+            <li id="nav2" class="active" onclick="shadowButton(this.id);"><a href="site.html">Marche<span class="sr-only">(current)</span></a></li>
+            <li id="nav3" class="" onclick="shadowButton(this.id);"><a href="classement.html">Classement</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
