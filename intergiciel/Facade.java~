@@ -61,9 +61,6 @@ public class Facade implements TimedObject {
 	}
 	
 	public Marchandise[] (Marchandise m){
-		/*
-		 * pour prendre tous les marchandises m
-		*/
 		return.entitymanager.createQuery("SELECT * from Historique_Marchandise where name = "+m.getName(),Marchandise.class).getResultList();
 	}
 	
