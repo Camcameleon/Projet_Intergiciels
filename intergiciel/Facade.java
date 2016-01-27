@@ -1,33 +1,49 @@
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.ejb.ScheduleExpression;
+import javax.ejb.Singleton;
+import javax.ejb.TimedObject;
+import javax.ejb.Timer;
+import javax.ejb.TimerService;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-//@Singleton
-public class Facade {
+@Singleton
+public class Facade implements TimedObject {
 	
 	@PersistenceContext
 	EntityManager entitymanager;
 	
+	@Resource
+	TimerService timerservice;
+	
 	public synchronized void acheter(int q, Joueur joueur, Marchandise marchandise) {
-		assert q > 0;
-		if (!joueur.possede.contains(marchandise)) {
-			joueur.possede.add(marchandise);
-			marchandise.getTypemarchandise().setQuantite(q);
+		if (Partie.peut_jouer) {
+			assert q > 0;
+			if (!joueur.possede.contains(marchandise)) {
+				joueur.possede.add(marchandise);
+				marchandise.getTypemarchandise().setQuantite(q);
+			}
+			int presente = marchandise.getTypemarchandise().getQuantite();
+			int nouvelle_quantite = presente + q;
+			marchandise.getTypemarchandise().setQuantite(nouvelle_quantite);
 		}
-		int presente = marchandise.getTypemarchandise().getQuantite();
-		int nouvelle_quantite = presente + q;
-		marchandise.getTypemarchandise().setQuantite(nouvelle_quantite);
 	}
 	
 	public synchronized void vendre(int q, Joueur joueur, Marchandise marchandise) {
-		assert q > 0;
-		assert q <= marchandise.getTypemarchandise().getPrix();
-		int presente = marchandise.getTypemarchandise().getQuantite();
-		int nouvelle_quantite = presente - q;
-		marchandise.getTypemarchandise().setQuantite(nouvelle_quantite);
+		if (Partie.peut_jouer) {
+			assert q > 0;
+			assert q <= marchandise.getTypemarchandise().getPrix();
+			int presente = marchandise.getTypemarchandise().getQuantite();
+			int nouvelle_quantite = presente - q;
+			marchandise.getTypemarchandise().setQuantite(nouvelle_quantite);
+		}
 	}
 	
 	public void produire() {
-		
+		/*
+		 * Ce que fait cette fonction est peut être directement dans les page html.
+		 */
 	}
 	
 	public void ameliorer(Joueur joueur, int id_usine) {
@@ -64,9 +80,9 @@ public class Facade {
 				 */
 			}
 		}
-		else {
+		/*else {
 			System.out.println("Ce joueur n'existe pas");
-		}
+		}*/
 	}
 	
 	public void inscription(String nom, String prenom, String pseudo, String mot_de_passe, String adresse_mail) {
@@ -75,20 +91,76 @@ public class Facade {
 			Joueur j =  new Joueur(nom, prenom, pseudo, mot_de_passe, adresse_mail);
 			entitymanager.persist(j);
 		}
-		else {
+		/*else {
 			System.out.println("Ce pseudo de joueur existe déjà, veuillez en trouver un autre!");
-		}
+		}*/
 	}
 	
-	public Coalition creer_coalition(String nom, int nombre_membre) {
-		return null;
+	public void creer_coalition(String nom, Joueur joueur) {
 		/*
 		 * se mettre d'accord sur les attributs d'une coalition et sur ses caractéristiques (nombres de membres, etc...)
 		 */
+		// le nombre de joueur dans une coalition est totalement arbitraire.
+		assert(nom != null);
+		Coalition coalition = entitymanager.find(Coalition.class, nom);
+		if (coalition.equals(null)) {
+			Coalition c = new Coalition(nom, joueur);
+			entitymanager.persist(c);
+		}
+		/*else {
+			System.out.println("Ce nom de coalition à déjà été choisi.");
+		}*/
 	}
 	
 	public void rejoindre_coalition(Joueur joueur, Coalition coalition) {
-		
+		assert(coalition != null && joueur != null && coalition.getNombre_joueur() < 10);
+		coalition.appartient.add(joueur);
+		joueur.setNom_coalition(coalition.getNom());
 	}
 	
+	public void supprimer_joueur(Joueur joueur) {
+		if (joueur != null) {
+			if (joueur.getNom_coalition() != null) {
+				Coalition c = entitymanager.find(Coalition.class, joueur.getNom_coalition());
+				c.appartient.remove(joueur);
+			}
+			joueur.partie.joueur.remove(joueur);
+			joueur.possede.clear();
+			entitymanager.remove(joueur);
+		}
+	}
+	
+	public void ajouter_marchandise(Marchandise m1, Marchandise m2) {
+		/*
+		 * il faudrait enregistrer toutes les combinaisons possibl d'assemblage des marchandises et checker avant si la combinaison existe.
+		 */
+	}
+	
+	@PostConstruct
+	public void creerTimer() {
+		ScheduleExpression scheduleExp = new ScheduleExpression().second("*").minute("*").hour("*/24");
+		Timer timer = timerservice.createCalendarTimer(scheduleExp);
+	}
+	
+	public void ejbTimeout(Timer timer) {
+		// c'est ici que l'on fait les appels au focntions pour mettre à jour le bordel.
+	}
+	
+	public Joueur trouver(String pseudo) {
+		Joueur joueur = entitymanager.find(Joueur.class, pseudo);
+		return joueur;
+	}
+	
+	public Collection<Marchandise> liste_marchandise() {
+		return possede.values;
+	}
 }
+
+
+
+
+
+
+
+
+
