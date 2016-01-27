@@ -7,7 +7,7 @@ public class Marchandise {
 	
 	private TypeMarchandise typemarchandise;
 	
-	@ManyToOne
+	@ManyToOne(mappedBy = "possede",fetch=FetchType.EAGER) 
 	Joueur proprietaire;
 
 	public Marchandise(TypeMarchandise typemarchandise) {

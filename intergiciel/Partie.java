@@ -8,10 +8,10 @@ import javax.persistence.OneToMany;
 public class Partie {
 	
 	// La liste des joueurs dans la partie
-	@OneToMany(mappedBy = "joueur", fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.EAGER)
 	Collection<Joueur> joueur;
 	// La liste des coalitions présentent dans le jeu
-	@OneToMany(mappedBy = "coalition", fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.EAGER)
 	Collection<Coalition> coalition;
 
 	public Partie() {

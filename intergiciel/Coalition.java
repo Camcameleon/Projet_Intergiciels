@@ -9,7 +9,7 @@ public class Coalition {
 	private ArrayList<Joueur> liste_joueur = null;
 	private String nom;
 	
-	@ManyToOne
+	@ManyToOne(mappedBy = "coalition",fetch=FetchType.EAGER) 
 	Partie partie;
 	@OneToMany
 	Collection<Joueur> appartient;

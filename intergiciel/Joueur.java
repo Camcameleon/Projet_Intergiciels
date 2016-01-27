@@ -17,11 +17,12 @@ public class Joueur {
 	private String adresse_mail;
 	private int argent;
 	// private SimpleDateFormat date_insciption;
+	// attention attribut coalition
 	
 	// La liste des marchandises possédées par ce joueur
-	@OneToMany(mappedBy = "possede", fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.EAGER)
 	Collection<Marchandise> possede;
-	@ManyToOne
+	@ManyToOne(mappedBy = "joueur",fetch=FetchType.EAGER) 
 	Partie partie;
 	
 	public Joueur(String nom, String prenom, String pseudo, String mot_de_passe, String adresse_mail) {
