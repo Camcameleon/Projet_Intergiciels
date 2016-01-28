@@ -38,49 +38,407 @@
 
   <body>
    
-    <div id="content">Affichage de la Partie</div>
+    <div id="content">Affichage de la Partie
 	<!-- la colonne du centre-->
 
 
 <ul id="menu-accordeon">
    <li><a href="#">Joueur</a>
       <ul>
-         <li><a href="#">Profil</a></li>
-         <li><a href="#">Niveau dans le jeu</a></li>
+         <li><a href="#">Profil</a>
+<input type="button" name="lien1" value="Description" onclick="self.location.href='profil.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+</li>
+         <li><a href="#">Niveau dans le jeu : 42</a></li>
       </ul>
    </li>
     <li><a href="#">Compte courant</a>
       <ul>
-         <li><a href="#">Trésorerie actuelle</a></li>
-         <li><a href="#">Achats</a></li>
-         <li><a href="#">Ventes</a></li>
+         <li><a href="#">Trésorerie actuelle</a>
+<input type="button" name="lien158" value="Etat trésorerie" onclick="self.location.href='tresorerie.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+</li>
+         <li><a href="#">Achats</a>
+<input type="button" name="lien159" value="Tableau A" onclick="self.location.href='achats.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+</li>
+         <li><a href="#">Ventes</a>
+<input type="button" name="lien159" value="Tableau B" onclick="self.location.href='ventes.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+</li>
       </ul>
    </li>
    <li><a href="#">Objets possédés</a>
       <ul>
-         <li><a href="#">Or</a></li>
-         <li><a href="#">Bois</a></li>
-         <li><a href="#">Fer</a></li>
-         <li><a href="#">Pierre</a></li>
+
+
+Quantité totale de ressources :
+	- Or : 1 342 106
+	- Bois : 861 742
+	- Pierre : 120 458
+	- Fer : 171 717
+
       </ul>
    </li>
    <li><a href="#">Prévisions futures : Calculatrice</a>
       <ul>
-         <li><a href="#">Guide d'utilisation</a></li>
+         <li><input type="button" name="lien159" value="Guide d'utilisation" onclick="self.location.href='calculatrice.html'" style="background-color:rgb(0,150,150)" style="color:white; font-weight:bold"onclick></li>
       </ul>
    </li>
    <li><a href="#">Plus</a>
       <ul>
          <li><a href="#">Forum</a></li>
-         <li><a href="#">Liens</a></li>
-         <li><a href="#">Nous contacter</a></li>
-         <li><a href="#">Team</a></li>
+         <li><input type="button" name="lien151" value="Liens" onclick="self.location.href='liens.html'" style="background-color:rgb(255,255,255)" style="color:white; font-weight:bold"onclick></li>
+         <li><a href="#">Nous contacter : 06 10 20 30 40</a></li>
+         <li><input type="button" name="lien152" value="Team" onclick="self.location.href='team.html'" style="background-color:rgb(255,255,255)" style="color:white; font-weight:bold"onclick></li>
          <li><a href="#">Recherche</a></li>
       </ul>
    </li>
 </ul>
 
+ <div id ="content" class="container-fluid">
+      <div class="row">
+          
 
+          <h2 class="sub-header">Tableau des marchandises</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>         
+                  <th>Nom Ressource</th>
+		  <th>Quantité actuelle</th>
+                  <th>Prix unitaire actuel</th>
+		  <th>Transaction</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Avion</td>
+                  <td>251</td>
+                  <td>300 000 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+                <tr>
+                  <td>Bateau </td>
+                  <td>134</td>
+                  <td>250 000 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+                <tr>
+                  <td>Train</td>
+                  <td>329</td>
+                  <td>265 000 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Air</td>
+                  <td>47 000</td>
+                  <td>0,05 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+		
+		<tr>
+                  <td>Terre</td>
+                  <td>329 345</td>
+                  <td>1,50 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Eau</td>
+                  <td>897 654</td>
+                  <td>3 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Feu</td>
+                  <td>4254</td>
+                  <td>21 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+		<tr>
+                  <td>Bois</td>
+                  <td>92 990</td>
+                  <td>105 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Metal</td>
+                  <td>2 231 457</td>
+                  <td>95 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Verre</td>
+                  <td>21 428</td>
+                  <td>9 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+		<tr>
+                  <td>Caoutchouc</td>
+                  <td>235 678</td>
+                  <td>25 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+
+		<tr>
+                  <td>Roue</td>
+                  <td>1 654</td>
+                  <td>33 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+		<tr>
+                  <td>Sablier</td>
+                  <td>154</td>
+                  <td>435 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+		<tr>
+                  <td>Hache</td>
+                  <td>68</td>
+                  <td>6,80 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+               
+
+		<tr>
+                  <td>Miroir</td>
+                  <td>94</td>
+                  <td>620 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+		<tr>
+                  <td>Pneu</td>
+                  <td>123</td>
+                  <td>60 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+		<tr>
+                  <td>Chaise</td>
+                  <td>350</td>
+                  <td>50 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+		<tr>
+                  <td>Velo</td>
+                  <td>250</td>
+                  <td>35 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Barque</td>
+                  <td>270</td>
+                  <td>35 000 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Paquebot</td>
+                  <td>75</td>
+                  <td>655 000 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Tandem</td>
+                  <td>325</td>
+                  <td>15 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Moto</td>
+                  <td>175</td>
+                  <td>2 000 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Scooter</td>
+                  <td>415</td>
+                  <td>1 200 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Trotinette</td>
+                  <td>60</td>
+                  <td>150 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>ULM</td>
+                  <td>50</td>
+                  <td>3 675 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Sous-marin</td>
+                  <td>17</td>
+                  <td>350 000 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Navette spatiale</td>
+                  <td>3</td>
+                  <td>2 500 999 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+		<tr>
+                  <td>Char a voile</td>
+                  <td>18</td>
+                  <td>4 099 $</td>
+                  <td>
+<input type="button" name="lien2" value="Acheter" onclick="self.location.href='transaction1.html'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+<input type="button" name="lien3" value="Vendre" onclick="self.location.href='transaction2.html'" style="background-color:rgb(255,0,20)" style="color:white; font-weight:bold"onclick>
+</td>
+
+                </tr>
+
+
+              </tbody>
+            </table>
+    </div>
+          </div>
+        </div>
+</div><!-- la colonne du centre-->
+	<div class="col-md-2">
+		<p>PS : Le tableau des marchandises du joueur doit être mis à jour suite à une transaction. </p>
+	</div>
+      </div>
+    </div>
+
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
